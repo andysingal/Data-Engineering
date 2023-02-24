@@ -20,6 +20,9 @@ soup = BeautifulSoup(html, "html.parser")
 links = soup.find_all("a")
 # print(len(links))
 
+# for link in links:
+#     print(link.get("href"))
+
 table = soup.find('tbody')
 # print(table)
 # print(table.find_all("td"))
@@ -27,6 +30,6 @@ table = soup.find('tbody')
 
 # print(soup.find_all('a', class_ = 'mw-jump-link'))
 a = soup.find('a', class_ = 'mw-jump-link')
-print(a.attrs)
-p = soup.find_all('p')[1]
-print(soup.text)
+# print(a.attrs)
+# p = soup.find_all('p')[1]
+# print(soup.text)

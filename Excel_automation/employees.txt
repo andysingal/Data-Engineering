@@ -1,0 +1,11 @@
+ID;First Name;Last Name;Department;Phone;Address;Salary
+1;Luke;Phillip;Sales;121921900;1st Address, Miami;52000
+2;Jack;Darren;IT;12918210;2nd Address, Miami;52200
+3;Ken;Wood;IT;20192101;3rd Address, Miami;58000
+4;John;Wilson;Marketing;31312311;4th Address, Miami;58700
+5;Emily;Larson;Marketing;43423434;5th Address, Miami;60000
+6;Anna;Sullivan;Sales;323232291;6th Address, Miami;54000
+7;Richard;Smith;Logistics;1277177910;7th Address, Miami;56000
+8;Ronnie;Moore;Sales;3691919186;8th Address, Miami;49000
+9;Benjamin;Drake;IT;215557299;9th Address, Miami;53000
+10;Wayne;Barker;Logistics;3266617791;10th Address, Miami;59500

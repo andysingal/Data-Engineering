@@ -16,7 +16,8 @@ request = requests.get(url)
 # get a dictionary with data
 content = request.json()
 
-body = " "
+body = ""
+
 for article in content["articles"][:20]:
       if article["title"] is not None:
           body = "Subject: Today's news" + "\n" + body + article["title"] + "\n"\
