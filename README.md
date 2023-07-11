@@ -22,3 +22,5 @@ Transform data.
 Use the built in logging module.
 
 Save the transformed data in a ready-to-load format which data engineers can use to load the data.
+
+![11](https://github.com/andysingal/Data-Engineering/blob/main/Images/Screenshot%202023-07-11%20at%206.53.42%20PM.png)
