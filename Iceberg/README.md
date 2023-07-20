@@ -128,4 +128,4 @@ The Apache Iceberg project is a specification, a standard of how metadata defini
 
 ![12](https://github.com/andysingal/Data-Engineering/blob/main/Images/Screenshot%202023-07-20%20at%201.32.30%20PM.png)
 
-![13]
+![13](https://github.com/andysingal/Data-Engineering/blob/main/Images/Screenshot%202023-07-20%20at%201.32.46%20PM.png)
