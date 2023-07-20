@@ -42,16 +42,26 @@ Opex allows flexibility and cost-effectiveness, especially in cloud-based servic
 Total opportunity cost of ownership (TOCO) should be evaluated, as choices may exclude other possibilities and hinder future adaptability.
 FinOps focuses on financial accountability, enabling quick iterations and dynamic scalability, ultimately driving business value in data engineering.
 
-- Today versus the future: immutable versus transitory technologies: 
+- Today versus the future: immutable versus transitory technologies: To ensure a successful data engineering approach, it is crucial to strike a balance between focusing on the rapidly evolving future and addressing current concrete needs. When selecting technologies, consider both immutable and transitory tools. Immutable technologies, like well-established languages and cloud components, have stood the test of time and are likely to remain relevant for a long time. Transitory technologies, on the other hand, may experience hype and popularity but could fade into obscurity quickly. Evaluating tools every two years and building around immutable technologies while considering transition barriers will help maintain flexibility and avoid potential pitfalls in the ever-changing data landscape.
 
-- Location (cloud, on prem, hybrid cloud, multicloud)
+- Location (cloud, on prem, hybrid cloud, multicloud): 
+Companies have various options for running their technology stacks, including on premises, in the cloud, hybrid cloud, and multicloud environments.
+On-premises systems are still common for established companies, where they own and manage their hardware in data centers or leased colocation space.
+The cloud offers a rental model, allowing companies to rent hardware and managed services from cloud providers like AWS, Azure, or Google Cloud, offering dynamic scaling and fast project launches.
+The cloud evolved from infrastructure as a service (IaaS) to platform as a service (PaaS) and software as a service (SaaS) offerings, providing managed services and simplified deployments.
+Cloud economics are complex, and understanding cloud pricing models is crucial for efficient cloud usage.
 
-- Build versus buy
+- Build versus buy:
+  The debate between building and buying technology solutions revolves around control, expertise, Total Cost of Ownership (TCO), and whether the solution offers a competitive advantage.
+The book suggests investing in building and customizing when it provides a competitive advantage; otherwise, utilize existing solutions in the market.
+Two types of data engineers are distinguished: Type A focuses on building and customizing when necessary, while Type B leans towards using existing solutions and abstraction.
+The trend in software adoption is shifting from top-down decisions by IT to bottom-up adoption by technical roles within a company.
+Open Source Software (OSS) is freely available and can be modified, but it requires maintenance and support. Community-managed OSS relies on strong communities, while commercial OSS offers managed services.
+Factors to consider when choosing OSS include mindshare, maturity, troubleshooting support, project management, team, roadmap, self-hosting and maintenance, and contributing back to the community.
+Proprietary Walled Gardens include independent offerings and cloud platform proprietary service offerings.
+Independent offerings are proprietary solutions offered by data tool companies and can work well as fully managed services.
+Factors to consider with independent offerings include interoperability, mindshare, documentation and support, pricing, and the longevity of the company.
+Cloud platform proprietary service offerings are proprietary services developed by cloud vendors, bundled to create an integrated ecosystem.
+Consider performance versus price, purchase considerations, and the Total Cost of Ownership when evaluating cloud platform proprietary service offerings.
+The advice is to focus on areas where building custom solutions will add significant value, and lean towards OSS and COSS as default options. Upskilling existing teams to use managed platforms can be beneficial. Understand the decision-making process for budget approval and choose wisely to avoid delays in technology implementation.
 
-- Monolith versus modular
-
-- Serverless versus servers
-
-- Optimization, performance, and the benchmark wars
-
-- The undercurrents of the data engineering lifecycle
