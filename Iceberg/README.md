@@ -126,4 +126,6 @@ All the above should be able to be accomplished at the petabyte scale of Netflix
 
 The Apache Iceberg project is a specification, a standard of how metadata defining a data lakehouse table should be written across several files. To support the adoption of this standard Apache Iceberg has many support libraries to help individuals work with the format or for compute engines to implement support. Along with these libraries, the project has created implementations for open source compute engines like Apache Spark and Apache Flink.
 
+![12](https://github.com/andysingal/Data-Engineering/blob/main/Images/Screenshot%202023-07-20%20at%201.32.30%20PM.png)
 
+![13]
