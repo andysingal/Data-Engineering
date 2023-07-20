@@ -99,3 +99,31 @@ Better collection of table statistics and metadata that can allow a query engine
 While most modern table formats provide the above, the Apache Iceberg format provides these and solves many of the other problems with the Hive table format.
 
 
+
+<h1>How Did Apache Iceberg Come to Be?</h1>
+Netflix in the creation of what became the Apache Iceberg format came to a conclusion that many of the problems with the Hive Format stemmed from one simple but fundamental flaw. That flaw is that each table is tracked as directories and subdirectories limiting the granularity that is necessary to provide consistency guarantees, better concurrency and more.
+
+With this in mind netflix set out to create a new table format with several goals in mind:
+
+Consistency
+If updates to a table occur over multiple transactions, it is possible for end users to experience inconsistency in the data they are viewing. An update to a table across multiple partitions should be done fast and atomically so data is consistent to end users. They either see the data before the update or after the update and nothing in between.
+
+Performance
+With Hive’s file/directory listing bottleneck, query planning would take excessively long to complete before actually executing the query. The table should provide metadata and avoid excessive file listing so not only can query planning can be quicker but the resulting plans can also be executed faster since they scan only the files necessary to satisfy the query.
+
+Easy to Use
+To get the benefits of techniques like partitioning, end users should not have to be aware of the physical structure of the table. The table should be able to give users the benefits of partitioning based on naturally intuitive queries and not depend on filtering extra partition columns derived from a column they are already filtering by (like filtering by a month column when you’ve already filtered the timestamp it is derived from).
+
+Evolvability
+Updating schemas of Hive tables could result in unsafe transactions and updating how a table is partitioned would result in a need to rewrite the entire table. A table should be able to evolve its schema and partitioning scheme safely and without rewriting the table.
+
+Scalability
+All the above should be able to be accomplished at the petabyte scale of Netflix’s data.
+
+
+
+**** So they began creating the Iceberg format which focuses on defining tables as a canonical list of files instead of tracking a table as a list of directories and subdirectories.
+
+The Apache Iceberg project is a specification, a standard of how metadata defining a data lakehouse table should be written across several files. To support the adoption of this standard Apache Iceberg has many support libraries to help individuals work with the format or for compute engines to implement support. Along with these libraries, the project has created implementations for open source compute engines like Apache Spark and Apache Flink.
+
+
