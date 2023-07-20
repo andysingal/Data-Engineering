@@ -129,3 +129,42 @@ The Apache Iceberg project is a specification, a standard of how metadata defini
 ![12](https://github.com/andysingal/Data-Engineering/blob/main/Images/Screenshot%202023-07-20%20at%201.32.30%20PM.png)
 
 ![13](https://github.com/andysingal/Data-Engineering/blob/main/Images/Screenshot%202023-07-20%20at%201.32.46%20PM.png)
+
+
+Apache Iceberg Features
+Apache Iceberg’s unique architecture enables an ever growing number of features that go beyond just solving the challenges with Hive, but unlocking entirely new functionality for data lakes and data lakehouse workloads.
+
+Below is a high level overview of key features of Apache Iceberg. We’ll go into more depth on these features in later chapters.
+
+ACID Transactions
+Apache Iceberg uses techniques like optimistic concurrency control to enable ACID guarantees even when you have transactions being handled by multiple readers and writers. This way you can run transactions on your data lakehouse that either commit or fail and nothing in between. A pessimistic concurrency model to enable balancing locking considerations for a wider variety of use cases (e.g., ones in which there is a higher likelihood of update conflicts) is also coming in the future, at time of writing.
+
+Concurrency guarantees are handled by the catalog as it is typically a mechanism that has built in ACID guarantees, This is what allows transactions on Iceberg tables to be atomic and provide correctness guarantees. If this didn’t exist, two different systems could have conflicting updates resulting in data loss.
+
+Partition Evolution
+A big headache with data lakes prior to Apache Iceberg was dealing with the need to change the table’s physical optimization. Too often, when your partitioning needs to change the only choice you have is to rewrite the entire table and at scale that can get very expensive. The alternative is to just live with the existing partitioning scheme and sacrifice the performance improvements a better partitioning scheme can provide.
+
+With Apache Iceberg you can update how the table is partitioned at any time without the need to re-write the table and all of its data. Since partitioning has everything to do with the metadata, the operations needed to make this change to your table’s structure are quick and cheap.
+
+
+
+Hidden Partitioning
+Sometimes users don’t know how a table is physically partitioned, and frankly, they shouldn’t have to care. Often a table is partitioned by some timestamp field and a user wants to query by that field (e.g., get average revenue by day for the last 90 days). However, to a user, the most intuitive way to do that is to include a filter of event_timestamp >= DATE_SUB(CURRENT_DATE, INTERVAL 6 MONTH). However, this will result in a full table scan because the table is actually partitioned by separate fields called event_year, event_month, and event_day because partitioning on a timestamp results in tiny partitions since the values are at the second, millisecond, or lower granularity.
+
+This problem is resolved with how Apache Iceberg’s handles partitioning. Partitioning in Apache Iceberg comes in two parts, the column from which physical partitioning should be based on and an optional transform to that value including functions such as bucket, truncate, year, month, day and hour. The ability to apply a transform eliminates the need to create new columns just for partitioning. This results in more intuitive queries benefiting from partitioning as consumers will not need to add extra filter predicates to their queries on additional partitioning columns.
+
+
+
+Row-Level Table Operations
+You can optimize the table’s row-level update patterns to take two forms: Copy-on-Write (COW) or Merge-on-Read. When using COW, for a change of any row in a given data file, the entire file is rewritten (with the row-level change made in the new file) even if a single record in it is updated. When using MOR, for any row-level updates, only a new file that contains the changes to the affected row which is reconciled on reads is written. This gives flexibility to speed-up heavy update and delete workloads.
+
+Time-Travel
+Apache Iceberg provides immutable snapshots, so the information for the tables historical state is accessible allowing you to run queries on the state of the table at a given point in time in the past, or what’s commonly known as time-travel. This can help you in situations such as doing end-of-quarter reporting without the need for duplicating the table’s data to a separate location or for reproducing the output of a machine learning model as of a certain point in time.
+
+
+Version Rollback
+Not only does Iceberg’s Snapshot isolation allow you query the data as it is, but to also revert the tables current state to any of those previous snapshots. So undoing mistakes is as easy as rolling back.
+
+
+Schema Evolution
+Tables change, whether that means adding/removing a column, renaming a column, or changing a column’s data type. Regardless of how your table needs to evolve, Apache Iceberg gives you robust schema evolution features.
