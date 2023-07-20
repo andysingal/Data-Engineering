@@ -26,4 +26,16 @@ Lack of ACID Guarantees: Data lakes may not offer ACID guarantees, affecting dat
 Lots of Configuration: Setting up and configuring a data lake with optimal performance and coupling requires significant input from data engineers, potentially adding to costs.
 
 
+Enter Data Lakehouse
+While using a data warehouse gave us performance and ease of use, analytics on data lakes gave us lower costs and reduced data drift from a complex web of data copies. The desire to thread the needle leads to great strides and innovation leading to what we now know as the data lakehouse.
 
+What makes a data lakehouse truly unique are data lake table formats that eliminate all the previous issues with the Hive table format. You store the data in the same places you would with a data lake, you use the query engines you would use with a data lake, your data is stored in the same formats it would be on a data lake, what truly transforms your world from a “read only” data to a “center of my data world” data lakehouse is the table format (refer to Figure 1-4). Table formats enabled better consistency, performance and ACID guarantees when working with data directly on your data lake storage leading to several value propositions.
+
+- Fewer Copies, Less Drift
+With ACID guarantees and better performance you can now move workloads typically saved for the data warehouse like updates and other data manipulation. If you don’t have to move your data to the lakehouse you can have a more streamlined architecture with fewer copies. Fewer copies mean less storage costs, less compute costs from moving data to a data warehouse, and better governance of your data to maintain compliance with regulations and internal controls.
+
+- Faster Queries, Fast Insights
+The end goal is always to get business value from quality insights from our data, everything is else just steps to that end. If you can get faster queries that means you can get insights faster. Data Lakehouses enable faster performing queries by using optimizations at the query engine, table format and file format.
+
+- Mistakes Don’t Have to Hurt
+Data Lakehouse table formats enable the possibility to undo mistakes by using snapshot isolation, allowing you to revert the table back to prior snapshots. You can work with your data but not have to be up at night wondering if a mistake will lead to hours of auditing, repairing then backfilling.
