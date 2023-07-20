@@ -39,3 +39,63 @@ The end goal is always to get business value from quality insights from our data
 
 - Mistakes Don’t Have to Hurt
 Data Lakehouse table formats enable the possibility to undo mistakes by using snapshot isolation, allowing you to revert the table back to prior snapshots. You can work with your data but not have to be up at night wondering if a mistake will lead to hours of auditing, repairing then backfilling.
+
+
+
+
+
+
+
+
+
+
+
+<h1>The Hive Table Format</h1>
+The Hive table format took the approach of defining a table as any and all files within a specified directory, the partitions of those tables would be the subdirectories.
+
+These directory paths defining the table are tracked by a service called the Hive metastore which query engines can access to know where to find the data applicable to their query.
+
+
+Figure 1-6. The architecture of a table stored using the Hive table format
+The Hive table format had several benefits:
+
+It enabled more efficient query patterns than full table scans, so techniques like partitioning and bucketing made it possible to avoid scanning every file for faster queries
+
+It was file format agnostic so it allowed the data community overtime to develop better file formats like Apache Parquet and use them in their Hive tables and did not require transformation prior to making the data available in a Hive table (e.g., Avro, CSV/TSV).
+
+Through atomic swaps of the listed directory in the hive metastore, you can make all or nothing (atomic) changes to an individual partition in the table.
+
+Over time this became the de facto standard working with most data tools and providing a uniform answer to “what data is in this table?”.
+
+While these benefits were significant there were also many limitations that become apparent as time passed:
+
+File level changes are inefficient since there was no mechanism to atomically swap a file in the same way the Hive Metastore could be used to swap a partition directory. You are essentially left making swaps at the partition level to update a single file atomically.
+
+While you could atomically swap a partition there wasn’t a mechanism for atomically updating multiple partitions as one transaction. This opens up the possibility for end users seeing inconsistent data between transactions updating multiple partitions.
+
+There really aren’t good mechanisms to enable concurrent simultaneous updates, especially with tools beyond Hive itself.
+
+An engine listing files and directories was time consuming and slowed down queries. Having to read and list files and directories that may not need scanning in the resulting query comes at a cost.
+
+Partition columns were often derived from other columns, such as deriving a month column from a timestamp. Partitioning only helped if you filtered by the partition column, and someone who has a filter on the timestamp column may not intuitively know to also filter on the derived month column leading to a full table scan since partitioning was not taken advantage of.
+
+Table statistics would be gathered through asynchronous jobs resulting in often state table statistics if any statistics were available at all, making it difficult for query engines to further optimize queries.
+
+Since object storage often throttles requests against the same prefix (think of an object storage prefix as analogous to a file directory), queries on tables with large numbers of files in a single partition (so all the files would be in one prefix) can have performance issues.
+
+The larger the scale of the datasets and use cases, the more these problems would be amplified resulting in significant pain in need of a new solution, so newer table formats were created.
+
+
+
+<h2>What Problems Do Modern Table Formats Solve?</h2>
+Modern table formats all aim to bring a core set of major benefits over the Hive table format:
+
+Modern table formats allowed for ACID transactions which are safe transactions that either complete in full or are canceled. In legacy formats like the Hive table format, many transactions could not have these guarantees.
+
+Enable safe transactions when there are multiple writers. If two or more writers write to a table, there is a mechanism to make sure the writer that completes their write second is aware and considers what the other writer(s) have done to keep the data consistent.
+
+Better collection of table statistics and metadata that can allow a query engine scanning the data to plan more efficiently.
+
+While most modern table formats provide the above, the Apache Iceberg format provides these and solves many of the other problems with the Hive table format.
+
+
