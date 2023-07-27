@@ -65,3 +65,48 @@ Cloud platform proprietary service offerings are proprietary services developed 
 Consider performance versus price, purchase considerations, and the Total Cost of Ownership when evaluating cloud platform proprietary service offerings.
 The advice is to focus on areas where building custom solutions will add significant value, and lean towards OSS and COSS as default options. Upskilling existing teams to use managed platforms can be beneficial. Understand the decision-making process for budget approval and choose wisely to avoid delays in technology implementation.
 
+
+
+Databases
+In this section, we’ll look at common source system database technologies that you’ll encounter as a data engineer and high-level considerations for working with these systems. There are as many types of databases as there are use cases for data.
+
+Major considerations for understanding database technologies
+Here, we introduce major ideas that occur across a variety of database technologies, including those that back software applications and those that support analytics use cases:
+
+<h1>Database management system</h1>
+A database system used to store and serve data. Abbreviated as DBMS, it consists of a storage engine, query optimizer, disaster recovery, and other key components for managing the database system.
+
+Lookups
+How does the database find and retrieve data? Indexes can help speed up lookups, but not all databases have indexes. Know whether your database uses indexes; if so, what are the best patterns for designing and maintaining them? Understand how to leverage for efficient extraction. It also helps to have a basic knowledge of the major types of indexes, including B-tree and log-structured merge-trees (LSM).
+
+Query optimizer
+Does the database utilize an optimizer? What are its characteristics?
+
+Scaling and distribution
+Does the database scale with demand? What scaling strategy does it deploy? Does it scale horizontally (more database nodes) or vertically (more resources on a single machine)?
+
+Modeling patterns
+What modeling patterns work best with the database (e.g., data normalization or wide tables)? (See Chapter 8 for our discussion of data modeling.)
+
+CRUD
+How is data queried, created, updated, and deleted in the database? Every type of database handles CRUD operations differently.
+
+Consistency
+Is the database fully consistent, or does it support a relaxed consistency model (e.g., eventual consistency)? Does the database support optional consistency modes for reads and writes (e.g., strongly consistent reads)?
+
+We divide databases into relational and nonrelational categories. In truth, the nonrelational category is far more diverse, but relational databases still occupy significant space in application backends.
+
+<h2>Relational databases</h2>
+A relational database management system (RDBMS) is one of the most common application backends. Relational databases were developed at IBM in the 1970s and popularized by Oracle in the 1980s. The growth of the internet saw the rise of the LAMP stack (Linux, Apache web server, MySQL, PHP) and an explosion of vendor and open source RDBMS options. Even with the rise of NoSQL databases (described in the following section), relational databases have remained extremely popular.
+
+Data is stored in a table of relations (rows), and each relation contains multiple fields (columns); see Figure 5-7. Note that we use the terms column and field interchangeably throughout this book. Each relation in the table has the same schema (a sequence of columns with assigned static types such as string, integer, or float). Rows are typically stored as a contiguous sequence of bytes on disk.
+
+
+Tables can also have various foreign keys—fields with values connected with the values of primary keys in other tables, facilitating joins, and allowing for complex schemas that spread data across multiple tables. In particular, it is possible to design a normalized schema.
+
+## What is normalization: Normalization is a strategy for ensuring that data in records is not duplicated in multiple places, thus avoiding the need to update states in multiple locations at once and preventing inconsistencies
+
+#### RDBMS systems are typically ACID compliant. Combining a normalized schema, ACID compliance, and support for high transaction rates makes relational database systems ideal for storing rapidly changing application states. The challenge for data engineers is to determine how to capture state information over time.
+
+
+
