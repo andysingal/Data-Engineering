@@ -4,4 +4,5 @@
 Creating virtual environment
 ```
 python3 -m venv fastapi-venv
+source fastapi-venv/bin/activate
 ```
