@@ -5,3 +5,6 @@
 5. ```docker tag node-demo:latest academind/node-hello-world:latest``` --Rename docker image
 
 6. ```docker login ``` ... followed by ```docker push academind/node-hello-world:latest```
+
+## VOLUME [v1](https://headsigned.com/posts/mounting-docker-volumes-with-docker-toolbox-for-windows/)
+- docker run -d -p 3000:80 --rm --name feedback-app -v feedback:/app/feedback feedback-node:volumes
