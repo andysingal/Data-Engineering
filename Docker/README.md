@@ -14,6 +14,7 @@
 4. Named Volumes survive container removal and can therefore be used to store persistent data
 5. Anonymous Volumes are attached to a container to save (temporary) data inside the container
 6. Bind Mounts are folders on the host machine which are specified by the user and mounted into containers-like Named Volumes
+7. Build Arguments and Runtime Environment variables can be used to make images and containers more dynamic/configurable
 
 - ```docker run -d -p 3000:80 --rm --name feedback-app -v feedback:/app/feedback feedback-node:volumes```
 - ```docker run -d -p 3000:80 --rm --name feedback-app -v feedback:/app/feedback -v /app  feedback-node:volumes```
