@@ -7,3 +7,6 @@
 - docker container inspect mongodb
 
 ```mongodb:172.17.0.2:27017/swfavorites```
+
+<img width="972" alt="Screenshot 2024-09-14 at 6 33 22 PM" src="https://github.com/user-attachments/assets/f859b41f-4fe8-4b86-8c54-096766d0764d">
+
