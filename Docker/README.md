@@ -42,6 +42,7 @@ docker build -t feedback-node:dev --build-arg DEFAULT_PORT=8000 .
 ```
 
 *** NETWORKING: Container Communication
+<img width="775" alt="Screenshot 2024-09-14 at 4 44 35 PM" src="https://github.com/user-attachments/assets/c4c4a611-8012-4db1-a8c9-b4997c4fe6f8">
 
 
 EXAMPLES to foloow:
