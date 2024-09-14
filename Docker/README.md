@@ -17,6 +17,21 @@
 <img width="629" alt="Screenshot 2024-08-29 at 10 17 16 PM" src="https://github.com/user-attachments/assets/78e76aef-1288-47ab-8368-48f5b6f5d8b8">
 
 
+*** WORKING WITH AGUMENTS & ENVIRONMENT VARIABLES  
+```
+ARG DEFAULT_PORT=80
+
+ENV PORT $DEFAULT_PORT
+
+EXPOSE $PORT
+```
+```-e PORT=8000``` *** if you create .env just mention --env-file ./.env [.env...PORT=8000] in the command line 
+
+or
+```
+docker build -t feedback-node:dev --build-arg DEFAULT_PORT=8000 .
+```
+
 
 EXAMPLES to foloow:
 ```
