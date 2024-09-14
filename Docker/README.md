@@ -7,12 +7,20 @@
 6. ```docker login ``` ... followed by ```docker push academind/node-hello-world:latest```
 
 ## VOLUME [v1](https://headsigned.com/posts/mounting-docker-volumes-with-docker-toolbox-for-windows/)
-- docker run -d -p 3000:80 --rm --name feedback-app -v feedback:/app/feedback feedback-node:volumes
-- docker run -d -p 3000:80 --rm --name feedback-app -v feedback:/app/feedback -v /app  feedback-node:volumes
 
-``` docker volume --help ```
-``` docker volume create --help```
-```docker volume inspect {VOLUME_NAME}```
+1. Containers can read + write data. Volumes can help with data storage. Bind Mounts can help with direct container interaction
+2. Containers can read + write data, but written data is lost if the container is removed
+3. Volumes are folders on the host machine, managed by docker, which are mounted into the COntainer
+4. Named Volumes survive container removal and can therefore be used to store persistent data
+5. Anonymous Volumes are attached to a container to save (temporary) data inside the container
+6. Bind Mounts are folders on the host machine which are specified by the user and mounted into containers-like Named Volumes
+
+- ```docker run -d -p 3000:80 --rm --name feedback-app -v feedback:/app/feedback feedback-node:volumes```
+- ```docker run -d -p 3000:80 --rm --name feedback-app -v feedback:/app/feedback -v /app  feedback-node:volumes```
+
+- ``` docker volume --help ```
+- ``` docker volume create --help```
+- ```docker volume inspect {VOLUME_NAME}```
 
 <img width="629" alt="Screenshot 2024-08-29 at 10 17 16 PM" src="https://github.com/user-attachments/assets/78e76aef-1288-47ab-8368-48f5b6f5d8b8">
 
@@ -31,6 +39,8 @@ or
 ```
 docker build -t feedback-node:dev --build-arg DEFAULT_PORT=8000 .
 ```
+
+*** NETWORKING: Container Communication
 
 
 EXAMPLES to foloow:
