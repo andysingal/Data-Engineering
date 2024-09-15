@@ -10,3 +10,7 @@
 
 <img width="972" alt="Screenshot 2024-09-14 at 6 33 22 PM" src="https://github.com/user-attachments/assets/f859b41f-4fe8-4b86-8c54-096766d0764d">
 
+## Docker network
+
+- ```docker network create favorites-net```
+- ```docker run -d --name mongodb --network favorites-net mongo 
