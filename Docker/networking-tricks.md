@@ -14,4 +14,4 @@
 
 - ```docker network create favorites-net```
 - ```docker run -d --name mongodb --network favorites-net mongo```
-- docker run --name favorites --network favorites-net -d --rm -p 3000:3000 favorites-node
+- ```docker run --name favorites --network favorites-net -d --rm -p 3000:3000 favorites-node```
