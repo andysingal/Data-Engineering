@@ -6,6 +6,8 @@
 
 6. ```docker login ``` ... followed by ```docker push academind/node-hello-world:latest```
 
+7. ```--platform liunx/amd64``` ## Start the container , using the option for a Mac with an M-series chip
+
 ## VOLUME [v1](https://headsigned.com/posts/mounting-docker-volumes-with-docker-toolbox-for-windows/)
 
 1. Containers can read + write data. Volumes can help with data storage. Bind Mounts can help with direct container interaction
