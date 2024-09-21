@@ -47,6 +47,9 @@ docker build -t feedback-node:dev --build-arg DEFAULT_PORT=8000 .
 <img width="794" alt="Screenshot 2024-09-14 at 5 04 26 PM" src="https://github.com/user-attachments/assets/1c55df51-928e-4169-9934-a9c1a7d7035b">
 
 
+
+
+
 EXAMPLES to foloow:
 ```
 export STORAGE_LOCATION=$HOME/anythingllm && \
@@ -58,6 +61,11 @@ export STORAGE_LOCATION=$HOME/anythingllm && \
  -v ${STORAGE_LOCATION}/.env:/app/server/.env \
  -e STORAGE_DIR="/app/server/storage" \
  mintplexlabs/anythingllm
+```
+
+```
+docker run --name mongodb --rm -d 27017:27017 mongo
+
 ```
 
 reference:
