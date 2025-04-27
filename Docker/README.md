@@ -72,3 +72,4 @@ reference:
 - https://docs.anythingllm.com/installation/desktop/macos
 - [lazydocker](https://github.com/jesseduffield/lazydocker)
 A simple terminal UI for both docker and docker-compose, written in Go with the gocui library
+- [Learning Docker The Hands-On Way](http://labs.iximiuz.com/roadmaps/docker)
