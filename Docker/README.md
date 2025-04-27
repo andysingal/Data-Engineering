@@ -69,4 +69,6 @@ docker run --name mongodb --rm -d 27017:27017 mongo
 ```
 
 reference:
-- https://docs.anythingllm.com/installation/desktop/macos 
+- https://docs.anythingllm.com/installation/desktop/macos
+- [lazydocker](https://github.com/jesseduffield/lazydocker)
+A simple terminal UI for both docker and docker-compose, written in Go with the gocui library
