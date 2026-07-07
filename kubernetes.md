@@ -58,3 +58,7 @@ spec:
       image: nginx
 ```
 
+```
+kubectl exec node-api -- printenv APP_COLOR
+green
+```
