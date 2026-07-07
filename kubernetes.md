@@ -30,10 +30,18 @@ kubectl get pods --no-headers | wc -l
 ```
 kubectl get pod webapp
 ```
+```
+kubectl describe pod webapp
+```
 
 ### YAML
 <img width="959" height="570" alt="Screenshot 2026-07-06 at 10 36 27 PM" src="https://github.com/user-attachments/assets/a3fa9fd8-c87b-4533-863d-461307bc616b" />
 
 <img width="425" height="428" alt="Screenshot 2026-07-06 at 10 47 03 PM" src="https://github.com/user-attachments/assets/507b19fc-345e-40c8-be41-79d5b7686b3d" />
+
+
+## Pods with YAML
+
+<img width="931" height="478" alt="Screenshot 2026-07-06 at 11 11 34 PM" src="https://github.com/user-attachments/assets/987380ca-774d-4eaf-9a4c-b5a9986fc877" />
 
 
