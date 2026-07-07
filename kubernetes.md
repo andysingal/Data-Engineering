@@ -44,4 +44,17 @@ kubectl describe pod webapp
 
 <img width="931" height="478" alt="Screenshot 2026-07-06 at 11 11 34 PM" src="https://github.com/user-attachments/assets/987380ca-774d-4eaf-9a4c-b5a9986fc877" />
 
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: web-pod
+  labels:
+    app: web
+    env: prod
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx
+```
 
