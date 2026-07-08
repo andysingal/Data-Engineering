@@ -1,3 +1,25 @@
+Kubernetes: A container orchestration technology that manages and deploys thousands of containers in a cluster
+
+<img width="977" height="502" alt="Screenshot 2026-07-07 at 8 11 45 PM" src="https://github.com/user-attachments/assets/936620b4-73c2-431a-b987-fc7949992339" />
+
+The master watches over the nodes in the cluster and is responsible for the actual orchestration of containers on the worker nodes
+
+Components:
+
+<img width="417" height="335" alt="Screenshot 2026-07-07 at 8 13 41 PM" src="https://github.com/user-attachments/assets/3b6c36d7-7f59-4ae5-9429-277ad2e4bef4" />
+
+etcd: Think of it this way when you have multiple nodes and multiple masters in your cluster, etcd stores. Etcd is responsible for implementing locks within the cluster 
+to ensure that there are no conflicts 
+
+Controller: brain behind orchestration. They are responsible for noticing and responding when nodes , containers, or endpoints goes down . Containers make decisions for bringing up new containers
+
+
+<img width="847" height="476" alt="Screenshot 2026-07-07 at 8 20 12 PM" src="https://github.com/user-attachments/assets/afb3eb5a-722b-4545-8a9f-ed3688a1980b" />
+
+
+
+
+
 [Docker Containers vs. Kubernetes Pods - Taking a Deeper Look](https://labs.iximiuz.com/tutorials/containers-vs-pods)
 
 ### Kubectl
@@ -62,3 +84,16 @@ spec:
 kubectl exec node-api -- printenv APP_COLOR
 green
 ```
+
+Container:
+
+<img width="851" height="530" alt="Screenshot 2026-07-07 at 8 26 07 PM" src="https://github.com/user-attachments/assets/a341f69d-e590-4dfe-a935-6649958c9246" />
+
+<img width="923" height="488" alt="Screenshot 2026-07-07 at 8 31 27 PM" src="https://github.com/user-attachments/assets/9a819172-30ff-4cd6-ac02-b1c6437bb042" />
+
+
+
+
+History: 
+<img width="860" height="553" alt="Screenshot 2026-07-07 at 8 25 06 PM" src="https://github.com/user-attachments/assets/4382b8aa-4502-4fd5-ad7a-38002075ee9a" />
+
