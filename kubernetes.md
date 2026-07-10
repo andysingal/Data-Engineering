@@ -56,8 +56,22 @@ kubectl get pod webapp
 kubectl describe pod webapp
 ```
 
+```
+kubectl run nginx --image=nginx
+
+kubectl get pods
+
+kubectl create deployment nginx --image=nginx
+
+```
+
 ### YAML
+A YAML file is used to represent data, in this case configuration data.
+
 <img width="959" height="570" alt="Screenshot 2026-07-06 at 10 36 27 PM" src="https://github.com/user-attachments/assets/a3fa9fd8-c87b-4533-863d-461307bc616b" />
+
+<img width="889" height="483" alt="Screenshot 2026-07-09 at 7 42 56 PM" src="https://github.com/user-attachments/assets/deacf608-b88b-450e-94f8-bb010e4ae829" />
+
 
 <img width="425" height="428" alt="Screenshot 2026-07-06 at 10 47 03 PM" src="https://github.com/user-attachments/assets/507b19fc-345e-40c8-be41-79d5b7686b3d" />
 
@@ -84,6 +98,26 @@ spec:
 kubectl exec node-api -- printenv APP_COLOR
 green
 ```
+
+```
+kubectl create deployment hello-minikube --image=kicbase/echo-server:1.0
+kubectl expose deployment hello-minikube --type=NodePort --port=8080
+```
+[minikube](https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Farm64%2Fstable%2Fbinary+download#Service)
+
+to scale up, you create new pods, and to scale down you delete existing pods
+You do not add additional containers to an existing pod to scale your application 
+
+A single pod can have multiple containers(helper container), except for the fact that they they're usually not multiple containers 
+
+<img width="621" height="398" alt="Screenshot 2026-07-09 at 7 17 26 PM" src="https://github.com/user-attachments/assets/bc9e6f6c-21d3-4b74-a113-bf2fc6f6e94d" />
+
+<img width="985" height="519" alt="Screenshot 2026-07-09 at 7 22 23 PM" src="https://github.com/user-attachments/assets/3e36afef-0084-4a59-987d-402922d93b0a" />
+
+<img width="1000" height="530" alt="Screenshot 2026-07-09 at 7 27 46 PM" src="https://github.com/user-attachments/assets/25f5832e-8d0f-4ed0-a7fe-d46a969668e9" />
+
+
+
 
 Container:
 
