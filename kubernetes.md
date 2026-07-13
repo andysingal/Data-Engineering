@@ -103,6 +103,8 @@ green
 kubectl create deployment hello-minikube --image=kicbase/echo-server:1.0
 kubectl expose deployment hello-minikube --type=NodePort --port=8080
 ```
+
+
 [minikube](https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Farm64%2Fstable%2Fbinary+download#Service)
 
 to scale up, you create new pods, and to scale down you delete existing pods
