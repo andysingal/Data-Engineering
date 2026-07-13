@@ -95,6 +95,11 @@ spec:
 ```
 
 ```
+  kubectl create -f pod-definition.yml
+
+```
+
+```
 kubectl exec node-api -- printenv APP_COLOR
 green
 ```
