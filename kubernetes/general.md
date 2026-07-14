@@ -453,6 +453,9 @@ Blue-Green Deployment
 - testing
 
                 
+## Resources
+
+[AI-DevOps-Kubernetes-Agent](https://github.com/iam-veeramalla/AI-DevOps-Kubernetes-Agent)
 
 
    
