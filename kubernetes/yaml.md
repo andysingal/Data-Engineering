@@ -45,3 +45,8 @@ spec:
         - name: POSTGRES_PASSWORD
           value: mysecretpassword
 ```
+
+```
+kubectl run  redis --image=redis123 --dry-run -o yaml
+
+```
