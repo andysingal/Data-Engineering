@@ -195,6 +195,9 @@ spec:
 
    KEDA = HPA on steroids.. Scale on signal that matters 
 
+   <img width="864" height="468" alt="Screenshot 2026-07-14 at 4 51 12 PM" src="https://github.com/user-attachments/assets/fe9137aa-2b30-496f-94dd-75851c6ed869" />
+
+
   ### Key Components
 
 
@@ -319,12 +322,18 @@ affinity:
 - Pod Affinity: It attracts pods together --> to keep training pods on the same rack 
 - Anti-Affinity: Pushes (pods) apart > to spread model replica across diferent zones
 
+<img width="399" height="329" alt="Screenshot 2026-07-14 at 4 46 19 PM" src="https://github.com/user-attachments/assets/79b1106e-0463-4abc-a036-12b91d599212" />
+
 
 ## Toleration and Taints
 - gpu-training-job --- tolerates: gpu=true: NoSchedule , web-frontend.. no tolerance ....> scheduled gpu-node-1 
-[image](https://www.youtube.com/watch?v=H_a5DTKSEjY&t=239s)
+
+<img width="724" height="435" alt="Screenshot 2026-07-14 at 4 45 57 PM" src="https://github.com/user-attachments/assets/2bd32715-983e-419c-a6a4-52a7f4919fdb" />
+
 
 Topology spread constraint
+<img width="769" height="428" alt="Screenshot 2026-07-14 at 4 47 14 PM" src="https://github.com/user-attachments/assets/b6d4c784-1841-428b-8f6b-3fba79861b58" />
+
 
 1. Resource Requests and Limits: Scheduling resource requests or what your pod eeds
 2. Node Selector and Node Affinity: For which nodes pod can run on
@@ -358,6 +367,10 @@ $kubectl get nodes -o wide
 **** Why CNI matter for AI Workloads
 - When you run distributed training,
 - your pods are constantly exchanging gradients. That's basically gigabits of data flying between pods every second
+
+<img width="839" height="468" alt="Screenshot 2026-07-14 at 4 48 18 PM" src="https://github.com/user-attachments/assets/df54be81-d3b6-4b97-a11d-a39c2e30827d" />
+
+<img width="765" height="429" alt="Screenshot 2026-07-14 at 4 49 02 PM" src="https://github.com/user-attachments/assets/dc370683-5cd7-4f3e-9a84-471f2d183619" />
 
 
 **** For High-End Training Use cases
@@ -408,6 +421,8 @@ FOR AI Workloads
 
 - Canary Rollouts
 - gRPC Support : Most Serving Framework such as K-Serve, vLLM... used for high throughput inference
+
+<img width="748" height="416" alt="Screenshot 2026-07-14 at 4 49 34 PM" src="https://github.com/user-attachments/assets/5bd261f9-abe6-49ac-8f1e-6aee266b6c6b" />
 
 
 ### Storage
