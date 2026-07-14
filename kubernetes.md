@@ -95,7 +95,7 @@ spec:
 ```
 
 ```
-  kubectl create -f pod-definition.yml
+  kubectl create -f pod-definition.yaml
 
 ```
 
