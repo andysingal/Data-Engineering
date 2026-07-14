@@ -1,0 +1,7 @@
+```
+{
+    "yaml.schemas": {
+        "kubernetes": "/*.yaml"
+}
+}
+```
