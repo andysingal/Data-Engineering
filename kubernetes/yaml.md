@@ -47,6 +47,6 @@ spec:
 ```
 
 ```
-kubectl run  redis --image=redis123 --dry-run -o yaml
+kubectl run  redis --image=redis123 --dry-run=client -o yaml
 
 ```
