@@ -49,4 +49,8 @@ spec:
 ```
 kubectl run  redis --image=redis123 --dry-run=client -o yaml > redis.yaml
 
+kubectl create -f redis.yaml
+
+kubectl apply -f redis.yaml
+
 ```
