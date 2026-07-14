@@ -13,3 +13,18 @@ spec:
          image: nginx
 
 ```    
+
+postgres.yaml
+
+```
+apiVersion: v1
+kind: Pod
+metadata:
+   name: postgres
+   labels:
+      tier: db-tier
+spec:
+    containers:
+       - name: postgres
+         image: postgres
+```
