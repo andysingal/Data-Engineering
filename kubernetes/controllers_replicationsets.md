@@ -57,6 +57,9 @@ or kubectl scale --replicas=6 -f replicaset-definition.yaml
 
 kubectl describe replicaset myapp-replicaset
 
+### to edit
+kubectl edit replicaset myapp-replicaset
+
 ```
 
 ### Commands
