@@ -13,5 +13,6 @@ kubectl get pods
 
 kubectl get all
 
+kubectl describe deployment <app>
 ```
 
