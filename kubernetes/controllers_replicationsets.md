@@ -60,6 +60,8 @@ kubectl describe replicaset myapp-replicaset
 ### to edit
 kubectl edit replicaset myapp-replicaset
 
+kubectl explain replicaset...
+
 ```
 
 ### Commands
