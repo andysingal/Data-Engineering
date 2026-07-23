@@ -16,3 +16,26 @@ kubectl get all
 kubectl describe deployment <app>
 ```
 
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  labels:
+    app: mywebsite
+    tier: frontend
+spec:
+  replicas: 4
+  template:
+    metadata:
+      name: myapp-pod
+      labels:
+        app: myapp
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
+  selector: 
+     matchLabels:
+        app: myapp
+```
