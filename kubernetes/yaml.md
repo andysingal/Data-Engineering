@@ -53,4 +53,6 @@ kubectl create -f redis.yaml
 
 kubectl apply -f redis.yaml
 
+kubectl apply --dry-run=client -f new-replica-set.yaml
+
 ```
