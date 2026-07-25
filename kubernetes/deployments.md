@@ -61,3 +61,18 @@ kubectl rollout history deployment/myapp-deployment
 kubectl rollout undo deployment/myapp-deployment
 
 ```
+
+```
+kubectl create -f deployment-definition.yml
+
+kubectl rollout status/history deployment/myapp-deployment
+
+kubectl delete deployment myapp-deployment
+
+```
+
+<img width="969" height="231" alt="Screenshot 2026-07-25 at 3 07 40 PM" src="https://github.com/user-attachments/assets/36c305fa-8456-4df2-9fb7-9fa6b2c41fb0" />
+
+<img width="966" height="415" alt="Screenshot 2026-07-25 at 3 13 02 PM" src="https://github.com/user-attachments/assets/967f046b-b58d-435e-a6a2-4a9b6078f643" />
+
+
