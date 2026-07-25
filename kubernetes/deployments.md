@@ -75,4 +75,17 @@ kubectl delete deployment myapp-deployment
 
 <img width="966" height="415" alt="Screenshot 2026-07-25 at 3 13 02 PM" src="https://github.com/user-attachments/assets/967f046b-b58d-435e-a6a2-4a9b6078f643" />
 
+### Recreate
 
+```
+kubectl get deployment frontend -o yaml | grep -A5 "strategy:"
+
+kubectl patch deployment frontend --type='json' -p='[{"op":"remove","path":"/spec/strategy/rollingUpdate"},{"op":"replace","path":"/spec/strategy/type","value":"Recreate"}]'
+
+kubectl get deployment frontend -o yaml | grep -A3 "strategy:"
+    6  kubectl get deployment frontend -o yaml > frontend.yaml
+    7  cat frontend.yaml 
+    8  kubectl get deployment frontend -o jsonpath='{.spec.strategy.type}{"\n"}'
+    9  kubectl get deployments
+
+```
