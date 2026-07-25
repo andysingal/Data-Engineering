@@ -52,6 +52,9 @@ Kubectl apply -f deployment-definition.yml
 
 kubectl set image deployment/myapp-deployment nginx=nginx:1.9.1
 
+kubectl set image deployment/frontend simple-webapp=kodekloud/webapp-color:v3
+deployment.apps/frontend image updated
+
 --- Status
 kubectl rollout status deployment/myapp-deployment
 
