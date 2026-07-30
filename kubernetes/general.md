@@ -1,3 +1,6 @@
+<img width="523" height="784" alt="Screenshot 2026-07-30 at 12 42 18 PM" src="https://github.com/user-attachments/assets/60880eac-3aa3-43bd-adbf-8224f1a8605e" />
+
+
 #### Cloud Managed Kubernetes
 - Managed control planes 
 - EKS, GKE, AKS, OKE
